@@ -10,6 +10,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {MesssgePage} from "../pages/messsge/messsge";
+import {WallPage} from "../pages/wall/wall";
+import {PrivacyPage} from "../pages/privacy/privacy";
+import { UserDataProvider } from '../providers/user-data/user-data';
+import { MessageServiceProvider } from '../providers/message-service/message-service';
+import {HttpClientModule} from "@angular/common/http";
+import { WallServiceProvider } from '../providers/wall-service/wall-service';
 
 @NgModule({
   declarations: [
@@ -17,11 +24,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    MesssgePage,
+    WallPage,
+    PrivacyPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,12 +40,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PrivacyPage,
+    WallPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserDataProvider,
+    MessageServiceProvider,
+    HttpClientModule,
+    WallServiceProvider
   ]
 })
 export class AppModule {}

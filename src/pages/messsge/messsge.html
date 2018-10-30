@@ -1,0 +1,24 @@
+<!--
+  Generated template for the MesssgePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <!--<ion-navbar>-->
+    <!--<ion-title>messsge</ion-title>-->
+  <!--</ion-navbar>-->
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Message</ion-label>
+    <ion-textarea [(ngModel)]="message" ></ion-textarea>
+  </ion-item>
+  <p>
+    <ion-buttons><button (click)="submitMessage(message)">Submit</button></ion-buttons>
+  </p>
+</ion-content>
